@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PlusIcon from './icons/PlusIcon.vue';
+import PlusIcon from './icons/PlusIcon';
 
 export default defineComponent({
   components: {

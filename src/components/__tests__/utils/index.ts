@@ -1,4 +1,4 @@
-import { TaskType } from "@/store/tasks";
+import type { TaskType } from "@/store/tasks";
 
 export const testTask: TaskType = {
   title: 'Task 1',

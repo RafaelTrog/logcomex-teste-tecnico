@@ -13,8 +13,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import Tag, { TagType } from './Tag.vue';
+import { defineComponent } from 'vue';
+import type { PropType } from 'vue'
+import Tag from './Tag.vue';
+import type { TagType } from './Tag.vue'
 
 export default defineComponent({
   components: {

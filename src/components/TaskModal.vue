@@ -41,12 +41,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, PropType } from 'vue';
-import { useTasksStore, TaskType } from '../store/tasks';
+import { defineComponent, reactive } from 'vue';
+import type { PropType } from 'vue';
+import { useTasksStore } from '../store/tasks';
+import type { TaskType } from '../store/tasks';
 import { useForm, useField } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
-import Tag, { TagType } from './Tag.vue'
+import Tag from './Tag.vue'
+import type { TagType } from './Tag.vue'
 
 export default defineComponent({
   props: {

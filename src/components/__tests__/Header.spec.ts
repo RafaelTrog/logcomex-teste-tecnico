@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { mount } from '@vue/test-utils'
+import { mount, VueWrapper } from '@vue/test-utils'
 import Header from '../Header.vue'
 
 describe('Header', () => {
   
-  let wrapper;
+  let wrapper: VueWrapper<any>;
 
   beforeEach(() => {
     wrapper = mount(Header);

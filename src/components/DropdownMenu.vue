@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 export default {

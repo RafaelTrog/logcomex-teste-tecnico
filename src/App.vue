@@ -1,6 +1,8 @@
 <script lang="ts">
-import { defineComponent, ref, computed, reactive, Ref, ComputedRef } from 'vue';
-import { TaskType, useTasksStore } from './store/tasks';
+import { defineComponent, ref, computed, reactive } from 'vue';
+import type { Ref, ComputedRef } from 'vue';
+import { useTasksStore } from './store/tasks';
+import type { TaskType } from './store/tasks';
 import Header from './components/Header.vue'
 import Sidebar from './components/Sidebar.vue'
 import TaskList from './components/TaskList.vue'

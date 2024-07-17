@@ -8,9 +8,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent } from 'vue';
+import type { PropType } from 'vue';
 import TaskCard from './TaskCard.vue';
-import { TaskType } from '../store/tasks';
+import type { TaskType } from '../store/tasks';
 
 export default defineComponent({
   components: {

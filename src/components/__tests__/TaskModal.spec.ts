@@ -1,13 +1,13 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { mount } from '@vue/test-utils'
+import { mount, VueWrapper } from '@vue/test-utils'
 import TaskModal from '../TaskModal.vue'
 import { createPinia, setActivePinia } from 'pinia'
 import { testTask } from './utils'
 import TaskCard from '../TaskCard.vue'
 
 describe('TaskModal', () => {
-  let wrapper;
+  let wrapper: VueWrapper<any>;
 
   beforeEach(() => {
     const pinia = createPinia()
@@ -35,10 +35,10 @@ describe('TaskModal', () => {
   })
 
   it('initializes with correct initial values', () => {
-    const titleInput = wrapper.find('input[name="title"]')
+    const titleInput = wrapper.find<HTMLInputElement>('input[name="title"]')
     expect(titleInput.element.value).toBe('')
 
-    const descriptionTextarea = wrapper.find('textarea[name="description"]')
+    const descriptionTextarea = wrapper.find<HTMLTextAreaElement>('textarea[name="description"]')
     expect(descriptionTextarea.element.value).toBe('')
   })
 })

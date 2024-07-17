@@ -10,7 +10,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
+import type { PropType } from 'vue'
 import { tagsConfig } from './utils/tagsConfig';
 
 export type TagType = "work" | "study" | "entertainment" | "family"

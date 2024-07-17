@@ -33,11 +33,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, toRaw, ref, reactive } from 'vue';
-import { useTasksStore } from '../store/tasks.ts';
-import type { TaskType } from '../store/tasks.ts'
+import { defineComponent, toRaw, ref, reactive } from 'vue';
+import type { PropType } from 'vue';
+import { useTasksStore } from '../store/tasks';
+import type { TaskType } from '../store/tasks'
 import DotsIcon from './icons/DotsIcon.vue'
-import { tagsConfig } from './utils/tagsConfig.js';
+import { tagsConfig } from './utils/tagsConfig';
 import TaskModal from '../components/TaskModal.vue';
 import DropdownMenu from './DropdownMenu.vue'
 import type { TagType } from './Tag.vue';

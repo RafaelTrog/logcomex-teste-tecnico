@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
-import { mount } from '@vue/test-utils'
+import { mount, VueWrapper } from '@vue/test-utils'
 import Sidebar from '../Sidebar.vue'
+import type { TagType } from '../Tag.vue';
 
 describe('Sidebar', () => {
-  let wrapper;
+  let wrapper: VueWrapper<any>;
 
   beforeEach(() => {
     wrapper = mount(Sidebar, {
@@ -19,13 +20,13 @@ describe('Sidebar', () => {
     const tagButtons = wrapper.findAll('button')
     expect(tagButtons.length).toBe(4)
 
-    wrapper.props().tags.forEach((tag, index) => {
+    wrapper.props().tags.forEach((tag: TagType, index: number) => {
       expect(tagButtons[index].text()).toBe(tag)
     })
   })
 
   it('renders done checkbox with its label', () => {
-    const checkbox = wrapper.find('input[type="checkbox"]')
+    const checkbox = wrapper.find<HTMLInputElement>('input[type="checkbox"]')
     const label = wrapper.find('label')
 
     expect(checkbox.exists()).toBe(true)

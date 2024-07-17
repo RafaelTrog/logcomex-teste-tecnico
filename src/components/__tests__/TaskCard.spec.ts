@@ -7,7 +7,7 @@ import { useTasksStore } from '@/store/tasks'
 import { testTask } from './utils'
 
 describe('TaskCard', () => {
-  let store;
+  let store: ReturnType<typeof useTasksStore>;
 
   beforeEach(() => {
     const pinia = createPinia()
