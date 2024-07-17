@@ -21,14 +21,14 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 export default {
   setup() {
     const isOpen = ref(false);
-    const dropdown = ref(null);
+    const dropdown = ref<HTMLDivElement | null>(null);
 
     const toggleMenu = () => {
       isOpen.value = !isOpen.value;
     };
 
-    const closeMenu = (event) => {
-      if (dropdown.value && !dropdown.value.contains(event.target)) {
+    const closeMenu = (event: MouseEvent) => {
+      if (dropdown.value && !dropdown.value.contains(event.target as Node)) {
         isOpen.value = false;
       }
     };
