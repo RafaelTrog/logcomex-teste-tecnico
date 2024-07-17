@@ -20,7 +20,6 @@ describe('Sidebar', () => {
     expect(tagButtons.length).toBe(4)
 
     wrapper.props().tags.forEach((tag, index) => {
-      console.log("TAG RENDERED: ", tag)
       expect(tagButtons[index].text()).toBe(tag)
     })
   })
