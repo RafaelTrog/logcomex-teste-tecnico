@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import TaskCard from '../TaskCard.vue'
 import { createTestingPinia } from '@pinia/testing'
 import { createPinia, setActivePinia } from 'pinia'
-import { useTasksStore } from '@/store/tasks'
+import { useTasksStore } from '../../store/tasks'
 import { testTask } from './utils'
 
 describe('TaskCard', () => {

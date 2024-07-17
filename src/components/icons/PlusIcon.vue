@@ -1,6 +1,5 @@
 <script lang="ts">
 export default {
-  name: 'PlusIcon',
   props: {
     width: {
       type: [Number, String],
