@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  #app {
+    @apply flex flex-col gap-5 lg:gap-10 h-dvh px-4 py-4 lg:px-16 lg:py-10 font-adobeClean overflow-y-auto
+  }
+
+  button {
+    @apply rounded-xl hover:bg-hover active:bg-active flex items-center gap-2 p-2 transition-all disabled:cursor-not-allowed disabled:active:bg-darkGray disabled:hover:bg-darkGray disabled:opacity-30
+  }
+
+  button > * {
+    @apply transition-all
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 20px;
+    height: 20px;
+    border: 2px solid #69665C;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1 !important;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: transparent;
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 15px;
+    border: solid #69665C;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform-origin: center;
+    margin-top: -5px;
+    margin-left: -3px;
+  }
+
+}
