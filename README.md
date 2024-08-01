@@ -43,7 +43,7 @@ Aplicativo de lista de tarefas (Todo App)
 - **Vitest**: Escolhido para testes unitários devido à integração com o Vue e suporte ao Typescript. Vitest é uma alternativa moderna ao Jest, oferecendo uma configuração mais simples e desempenho superior.
 
 #### Utilitários
-- **VueUse**: Utilizado para manipulação de localSTorage entre outras coisas.
+- **VueUse**: Utilizado para manipulação de localStorage entre outras coisas.
 - **Zod**: Validação de esquemas de dados. Validação de esquemas TypeScript, que facilita a validação e o parsing de dados.
 - **Vee-Validate**: Utilizado para validação de formulários. Oferece uma boa integração com o Zod para fornecer validação tipada.
 
@@ -53,7 +53,24 @@ Aplicativo de lista de tarefas (Todo App)
 
 ---
 
-### Instalação e Configuração (Comandos)
+### Instalação e Configuração - Docker 🐋
+#### Montar a imagem
+```
+docker build -t todo_logcomex .
+```
+#### Iniciar o container
+```
+docker run -d --name todo_app -p 5173:5173 todo_logcomex
+```
+Container criado e projeto executando em [localhost:5173](http://localhost:5173).
+
+#### Executar testes unitários
+```
+docker exec -it todo_app sh
+yarn test:unit
+```
+
+### Instalação e Configuração - Alternativo 🚫🐋
 #### Instalação de dependências:
 ```
 yarn
@@ -63,7 +80,7 @@ ou
 npm i
 ```
 
-#### Execução (localhost:5173)
+#### Execução
 ```
 yarn dev
 ```
@@ -71,6 +88,7 @@ ou
 ```
 npm run dev
 ```
+Projeto executando em [localhost:5173](http://localhost:5173).
 
 #### Execução dos testes
 ```
