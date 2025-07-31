@@ -32,7 +32,7 @@
         <span class="font-bold text-xl">Tags</span>
         <div class="flex flex-col md:flex-row md:items-center gap-x-12 gap-y-2 -ml-2 flex-wrap overflow-y-auto">
           <Tag v-for="tag in ['work', 'study', 'entertainment', 'family']" :key="tag" :type="tag as TagType"
-            :selected="($props.task ? $props.task.tags : reactiveTags).includes(tag as TagType)"
+            :selected="($props.task ? $props.task.tags : reactiveTags).includes(tag as string)"
             @click="toggleTag(tag as TagType)" />
         </div>
       </div>
