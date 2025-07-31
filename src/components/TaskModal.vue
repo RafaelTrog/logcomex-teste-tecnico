@@ -1,4 +1,4 @@
-<template>
+yarn build<template>
   <div v-if="modelValue" class="!z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
     @click="closeModal">
     <form class="bg-white py-12 px-6 md:py-10 md:px-16 rounded-2xl shadow-lg w-[90%] max-w-[800px] flex flex-col gap-6"
