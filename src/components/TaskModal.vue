@@ -111,7 +111,7 @@ export default defineComponent({
     const { value: title } = useField('title');
     const { value: description } = useField('description');
     const { value: tags, setValue: setTags } = useField('tags');
-    const reactiveTags = reactive(tags.value as TagType[] || [])
+    const reactiveTags = reactive((tags.value as TagType[]) || [])
 
     const closeModal = () => {
       emit('update:modelValue', false)
@@ -137,20 +137,21 @@ export default defineComponent({
       closeModal()
     })
 
-    const addTag = (tag: string) => {
-      const currentTags = tags.value as string[]
-      const updatedTags = [...currentTags as string[], tag]
+    const addTag = (tag: TagType) => {
+      const currentTags = (tags.value as TagType[]) || []
+      const updatedTags = [...currentTags, tag]
       setTags(updatedTags)
     }
 
-    const removeTag = (tag: string) => {
-      const currentTags = tags.value as string[]
+    const removeTag = (tag: TagType) => {
+      const currentTags = (tags.value as TagType[]) || []
       const updatedTags = currentTags.filter(t => t !== tag)
       setTags(updatedTags)
     }
 
     const toggleTag = (tag: TagType) => {
-      const index = props.task ? props.task.tags.indexOf(tag) : reactiveTags.indexOf(tag)
+      const currentTags = props.task ? props.task.tags : (tags.value as TagType[]) || []
+      const index = currentTags.indexOf(tag)
       if (index === -1) {
         addTag(tag)
       } else {
